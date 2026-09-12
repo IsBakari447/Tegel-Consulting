@@ -1,0 +1,244 @@
+/* Variabler som används på flera ställen */
+:root {
+  --white: white;
+  --black: black;
+  --gray: #ddd;
+
+  --title-size: 28px;
+  --text-size: 20px;
+
+  --photo-size: 280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+
+/* HERO */
+
+header {
+  height: 100vh;
+  background: url("images/nature.jpg") center/cover;
+  position: relative;
+  color: var(--white);
+}
+
+
+/* MENY */
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+#menu-toggle,
+.menu-button {
+  display: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav-links a:hover,
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* HERO-TEXT */
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+}
+
+.hero-text h1 {
+  font-size: var(--title-size);
+  margin-bottom: 40px;
+}
+
+.hero-text p {
+  font-size: 19px;
+}
+
+
+/* TEAM */
+
+main {
+  padding: 35px 20px 80px;
+}
+
+main h2 {
+  text-align: center;
+  font-size: var(--title-size);
+}
+
+.team {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 120px;
+}
+
+.person {
+  text-align: center;
+}
+
+.person h3 {
+  font-size: 15px;
+}
+
+.person img {
+  width: var(--photo-size);
+  height: var(--photo-size);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #aaa;
+}
+
+
+/* CITAT */
+
+.quote {
+  width: 370px;
+  margin: 15px auto;
+  padding: 20px;
+  background: var(--gray);
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.quote b {
+  font-size: 30px;
+}
+
+
+/* FOOTER */
+
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 60px 7%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+footer h2 {
+  margin-top: 0;
+  font-size: var(--title-size);
+}
+
+footer p,
+footer a {
+  font-size: var(--text-size);
+}
+
+footer a {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+footer i {
+  width: 35px;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+
+  nav {
+    padding: 10px;
+  }
+
+  .menu-button {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 15px;
+  }
+
+  #menu-toggle:checked + .menu-button + .nav-links {
+    display: block;
+  }
+
+  .hero-text h1 {
+    font-size: 23px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .team {
+    display: block;
+  }
+
+  .person {
+    margin-bottom: 50px;
+  }
+
+  .person img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .quote {
+    width: 90%;
+  }
+
+  footer {
+    display: block;
+    padding: 40px 30px;
+  }
+
+  footer div {
+    margin-bottom: 35px;
+  }
+
+  footer p,
+  footer a {
+    font-size: 17px;
+  }
+}
